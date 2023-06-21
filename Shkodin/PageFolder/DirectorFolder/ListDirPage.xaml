@@ -1,0 +1,81 @@
+﻿<Page x:Class="Shkodin.PageFolder.DirectorFolder.ListDirPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shkodin.PageFolder.DirectorFolder"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="546" 
+      MaxHeight="546"
+      MinHeight="546"
+      d:DesignWidth="935"
+      MaxWidth="935"
+      MinWidth="935">
+
+    <Grid>
+        <TextBox x:Name="SearchTb"
+                 materialDesign:HintAssist.Hint="Поиск"
+                 TextChanged="SearchTb_TextChanged"
+                 BorderBrush="Black"
+                 BorderThickness="2" 
+                 Margin="214,10,214,500"
+                 FontSize="22"
+                 FontFamily="Cascadia Code"/>
+        <DataGrid x:Name="ListStaffDG" IsReadOnly="True"
+                 AutoGenerateColumns="False" 
+                  Foreground="Black"
+                  BorderBrush="Black" 
+                  Margin="0,56,0,0"
+                  FontSize="18"
+                  FontFamily="Cascadia Code"
+                  Background="{x:Null}">
+            <DataGrid.ContextMenu>
+                <ContextMenu Name="AdtCM">
+                    <MenuItem x:Name="Red"
+                        Header="Редактирование"
+                 Click="Red_Click"/>
+
+                    <Separator/>
+                    <MenuItem x:Name="Del"
+                        Header="Удалить"
+                 Click="Del_Click"/>
+
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№ п/п" 
+                                    Binding="{Binding IdStaff}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Фамилия сотрудника" 
+                                    Binding="{Binding LastNameStaff}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Имя сотрудника" 
+                                    Binding="{Binding FirstNameStaff}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Отчество сотрудника" 
+                                    Binding="{Binding MiddleNameStaff}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Стаж (в годах)" 
+                                    Binding="{Binding YearsOfExperience}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Пол" 
+                                    Binding="{Binding Gender.NameGender}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Номер телефона сотрудника" 
+                                    Binding="{Binding PhoneNumberStaff}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Эл. почта сотрудника" 
+                                    Binding="{Binding EmailStaff}"
+                                    Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

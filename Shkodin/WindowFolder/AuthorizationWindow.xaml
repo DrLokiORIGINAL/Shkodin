@@ -1,0 +1,71 @@
+﻿<Window x:Class="Shkodin.WindowFolder.AuthorizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shkodin.WindowFolder"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="AuthorizationWindow" 
+        Height="450" 
+        MaxHeight="450"
+        MinHeight="450"
+        Width="400"
+        MaxWidth="400"
+        MinWidth="400"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip" 
+        Icon="/ResourceFolder/ImageFolder/icon.png">
+    <Window.Background>
+        <ImageBrush ImageSource="/ResourceFolder/ImageFolder/BGAuth.png"/>
+    </Window.Background>
+    <Border MouseDown="Border_MouseDown">
+        <Grid>
+            <Image Source="/ResourceFolder/ImageFolder/Auth.png"
+                   Margin="145,10,145,330"/>
+
+            <Label Content="Авторизация"
+                   Style="{StaticResource LabelLogoStyle}"
+                   Margin="84,120,84,285"/>
+
+            <TextBox x:Name="LoginTB"
+                 materialDesign:HintAssist.Hint="Логин"
+                 Margin="64,210,64,202"
+                 Foreground="Black"
+                     BorderThickness="2"
+                     VerticalContentAlignment="Center"
+                     FontSize="18"/>
+
+            <Image Source="/ResourceFolder/ImageFolder/Log.png" 
+                   Margin="20,210,344,206"/>
+
+            <PasswordBox x:Name="PasswordPB" 
+                         Margin="64,263,64,149"
+                         VerticalContentAlignment="Center"
+                     materialDesign:HintAssist.Hint="Пароль"
+                     Foreground="Black"
+                         BorderThickness="2"
+                         FontSize="18"/>
+
+            <Image Source="/ResourceFolder/ImageFolder/Pas.png" 
+                   Margin="18,260,342,150"/>
+
+            <Button x:Name="AuthBtn"
+                Margin="63,359,63,59"
+                    Content="Войти"
+                    Background="{x:Null}"
+                    BorderBrush="Black"
+                    BorderThickness="2"
+                    Foreground="Black"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    Click="AuthBtn_Click"/>
+
+            <Image Source="/ResourceFolder/ImageFolder/Close.png" 
+                   Margin="360,10,3,417"
+                   MouseUp="Image_MouseUp"/>
+        </Grid>
+    </Border>
+</Window>

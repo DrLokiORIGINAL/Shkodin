@@ -1,0 +1,99 @@
+﻿<Page x:Class="Shkodin.PageFolder.StaffFolder.ListColorSchemeOfTheHallPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shkodin.PageFolder.StaffFolder"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="546" 
+      MaxHeight="546"
+      MinHeight="546"
+      d:DesignWidth="935"
+      MaxWidth="935"
+      MinWidth="935">
+
+    <Grid>
+        <TextBox x:Name="SearchTb"
+                 materialDesign:HintAssist.Hint="Поиск"
+                 TextChanged="SearchTb_TextChanged"
+                 BorderBrush="Black"
+                 BorderThickness="2" 
+                 Margin="214,20,214,490"
+                 FontSize="22"
+                 FontFamily="Cascadia Code"/>
+
+        <ListBox x:Name="ListColorSchemeLB"
+                 SelectionMode="Multiple" 
+                 Margin="0,80,0,0"
+                 BorderBrush="Black"
+                 BorderThickness="2">
+
+            <ListBox.ContextMenu>
+                <ContextMenu Name="AdtCM">
+                    <MenuItem x:Name="Del"
+                        Header="Удалить"
+                 Click="Del_Click"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="520"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="350"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.RowSpan="1"
+                               Grid.Column="1"
+                               Grid.ColumnSpan="2"
+                               Source="{Binding PhotoColorSchemeOfTheHall}"/>
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="0"
+                                   Style="{DynamicResource StyleTextBlock}">
+                            <Run Text="№ п/п:" 
+                                 FontWeight="Bold"/>
+                            <Run Text="{Binding IdColorSchemeOfTheHall}"/>
+                        </TextBlock>
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="1"
+                            Style="{DynamicResource StyleTextBlock}">
+                            <Run Text="Название:" 
+                                 FontWeight="Bold"/>
+                            <Run Text="{Binding NameColorSchemeOfTheHall}"/>
+                        </TextBlock>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0"
+                                   Style="{DynamicResource StyleTextBlock}">
+                            <TextBlock.Text>
+                                <MultiBinding 
+                                    StringFormat="{} № п/п: {0}, Название: {1}">
+                                    <Binding Path="ColorSchemeOfTheHall.IdColorSchemeOfTheHall"/>
+                                    <Binding Path="ColorSchemeOfTheHall.NameColorSchemeOfTheHall"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="AddColorBtn"
+            Content="Добавление" 
+                Margin="753,20,22,490"
+                Background="{x:Null}"
+                BorderBrush="Black"
+                BorderThickness="2"
+                FontFamily="Cascadia Code SemiBold"
+                Click="AddColorBtn_Click"/>
+    </Grid>
+</Page>

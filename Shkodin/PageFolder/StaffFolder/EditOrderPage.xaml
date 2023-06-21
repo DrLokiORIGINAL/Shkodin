@@ -1,0 +1,139 @@
+﻿<Page x:Class="Shkodin.PageFolder.StaffFolder.EditOrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shkodin.PageFolder.StaffFolder"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="546" 
+      MaxHeight="546"
+      MinHeight="546"
+      d:DesignWidth="935"
+      MaxWidth="935"
+      MinWidth="935">
+
+    <Border>
+        <Grid>
+
+            <ComboBox x:Name="SizeCb"
+                      materialDesign:HintAssist.Hint="Размер комнаты"
+                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                      Margin="35,35,529,0"
+                      materialDesign:HintAssist.HintOpacity="0.5"
+                      SelectedItem="{Binding Size}" 
+                          DisplayMemberPath="NameSize"
+                          SelectedValuePath="IdSize"
+                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     BorderBrush="Black"
+                                     BorderThickness="1" VerticalAlignment="Top" Height="48"/>
+
+            <ComboBox x:Name="RoomCb"
+                      materialDesign:HintAssist.Hint="Комната"
+                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                      Margin="35,120,529,0"
+                      materialDesign:HintAssist.HintOpacity="0.5"
+                      SelectedItem="{Binding Room}" 
+                          DisplayMemberPath="NameRoom"
+                          SelectedValuePath="IdRoom"
+                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     BorderBrush="Black"
+                                     BorderThickness="1" VerticalAlignment="Top" Height="48"/>
+
+            <ComboBox x:Name="InteriorCb"
+                      materialDesign:HintAssist.Hint="Интерьер"
+                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                      Margin="35,205,529,0"
+                      materialDesign:HintAssist.HintOpacity="0.5"
+                      SelectedItem="{Binding Interior}" 
+                          DisplayMemberPath="NameInterior"
+                          SelectedValuePath="IdInterior"
+                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     BorderBrush="Black"
+                                     BorderThickness="1" VerticalAlignment="Top" Height="48"/>
+
+            <ComboBox x:Name="TypeCb"
+                      materialDesign:HintAssist.Hint="Тип"
+                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                      Margin="35,292,529,0"
+                      materialDesign:HintAssist.HintOpacity="0.5"
+                      SelectedItem="{Binding Type}" 
+                          DisplayMemberPath="NameType"
+                          SelectedValuePath="IdType"
+                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     BorderBrush="Black"
+                                     BorderThickness="1" VerticalAlignment="Top" Height="48"/>
+
+            <TextBox x:Name="WOTB"
+                 materialDesign:HintAssist.Hint="Пожелания"
+                     materialDesign:HintAssist.HintOpacity="0.5"
+                     Margin="35,377,529,121"
+                     BorderBrush="Black"
+                     BorderThickness="1"
+                     FontSize="22"
+                     Text="{Binding WishesOrder}"/>
+
+            <ComboBox x:Name="StaffCb"
+                      materialDesign:HintAssist.Hint="Фотограф"
+                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                      Margin="529,35,35,0"
+                      materialDesign:HintAssist.HintOpacity="0.5"
+                      SelectedItem="{Binding Staff}" 
+                          DisplayMemberPath="NameStaff"
+                          SelectedValuePath="IdStaff"
+                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     BorderBrush="Black"
+                                     BorderThickness="1" VerticalAlignment="Top" Height="48"/>
+
+            <ComboBox x:Name="ColorSchemeOfTheHallCb"
+                      materialDesign:HintAssist.Hint="Цветовая гамма зала"
+                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                      Margin="529,120,35,0"
+                      materialDesign:HintAssist.HintOpacity="0.5"
+                      SelectedItem="{Binding ColorSchemeOfTheHall}"
+                          DisplayMemberPath="NameColorSchemeOfTheHall"
+                          SelectedValuePath="IdColorSchemeOfTheHall"
+                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     BorderBrush="Black"
+                                     BorderThickness="1" VerticalAlignment="Top" Height="48"/>
+
+            <TextBox x:Name="EPTB"
+                 materialDesign:HintAssist.Hint="Оборудование"
+                     materialDesign:HintAssist.HintOpacity="0.5"
+                     Margin="529,205,35,293"
+                     BorderBrush="Black"
+                     BorderThickness="1"
+                     FontSize="22"
+                     Text="{Binding Equipment}"/>
+
+            <ComboBox x:Name="EquippingCb"
+                      materialDesign:HintAssist.Hint="Оснащение"
+                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                      Margin="529,292,35,0"
+                      materialDesign:HintAssist.HintOpacity="0.5"
+                      SelectedItem="{Binding Equipping}"
+                          DisplayMemberPath="NameEquipping"
+                          SelectedValuePath="IdEquipping"
+                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     BorderBrush="Black"
+                                     BorderThickness="1" VerticalAlignment="Top" Height="48"/>
+
+            <TextBox x:Name="AFBTB"
+                 materialDesign:HintAssist.Hint="Дополнение клиента"
+                     materialDesign:HintAssist.HintOpacity="0.5"
+                     Margin="529,377,35,121"
+                     BorderBrush="Black"
+                     BorderThickness="1"
+                     FontSize="22"
+                     Text="{Binding AddonFromBuyer}"/>
+
+            <Button x:Name="EditDirBtn" 
+                    Margin="282,475,282,39"
+                    Content="Редактировать"
+                    Background="{x:Null}"
+                    BorderBrush="Black"
+                    BorderThickness="2"
+                    Click="EditDirBtn_Click"/>
+        </Grid>
+    </Border>
+</Page>

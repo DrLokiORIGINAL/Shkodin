@@ -1,0 +1,87 @@
+﻿<Page x:Class="Shkodin.PageFolder.DirectorFolder.AddDirPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shkodin.PageFolder.DirectorFolder"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="546" 
+      MaxHeight="546"
+      MinHeight="546"
+      d:DesignWidth="935"
+      MaxWidth="935"
+      MinWidth="935">
+
+    <Border>
+        <Grid>
+            <TextBox x:Name="LNTB"
+                 materialDesign:HintAssist.Hint="Фамилия сотрудника"
+                     materialDesign:HintAssist.HintOpacity="0.5"
+                     Margin="35,35,529,463"
+                     BorderBrush="Black"
+                     BorderThickness="1"
+                     FontSize="22"/>
+
+            <TextBox x:Name="FNTB"
+                 materialDesign:HintAssist.Hint="Имя сотрудника"
+                     materialDesign:HintAssist.HintOpacity="0.5"
+                     Margin="35,142,529,356"
+                     BorderBrush="Black"
+                     BorderThickness="1"
+                     FontSize="22"/>
+
+            <TextBox x:Name="MNTB"
+                 materialDesign:HintAssist.Hint="Отчество сотрудника"
+                     materialDesign:HintAssist.HintOpacity="0.5"
+                     Margin="35,252,529,246"
+                     BorderBrush="Black"
+                     BorderThickness="1"
+                     FontSize="22"/>
+
+            <TextBox x:Name="YOETB"
+                 materialDesign:HintAssist.Hint="Стаж (в годах)"
+                     materialDesign:HintAssist.HintOpacity="0.5"
+                     Margin="282,356,282,142"
+                     BorderBrush="Black"
+                     BorderThickness="1"
+                     FontSize="22"/>
+
+            <ComboBox x:Name="SexCb"
+                      materialDesign:HintAssist.Hint="Пол"
+                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                      Margin="529,35,35,0"
+                      materialDesign:HintAssist.HintOpacity="0.5"
+                      SelectedItem="{Binding Gender}" 
+                          DisplayMemberPath="NameGender"
+                          SelectedValuePath="IdGender"
+                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     BorderBrush="Black"
+                                     BorderThickness="1" VerticalAlignment="Top" Height="48"/>
+
+            <TextBox x:Name="PNTB"
+                 materialDesign:HintAssist.Hint="Номер телефона сотрудника"
+                     materialDesign:HintAssist.HintOpacity="0.5"
+                     Margin="529,142,35,356"
+                     BorderBrush="Black"
+                     BorderThickness="1"
+                     FontSize="22"/>
+
+            <TextBox x:Name="ETB"
+                 materialDesign:HintAssist.Hint="Эл. почта сотрудника"
+                     materialDesign:HintAssist.HintOpacity="0.5"
+                     Margin="529,252,35,246"
+                     BorderBrush="Black"
+                     BorderThickness="1"
+                     FontSize="22"/>
+
+            <Button x:Name="AddDirBtn" 
+                    Margin="282,462,282,52"
+                    Content="Добавить"
+                    Background="{x:Null}"
+                    BorderBrush="Black"
+                    BorderThickness="2"
+                    Click="AddDirBtn_Click"/>
+        </Grid>
+    </Border>
+</Page>

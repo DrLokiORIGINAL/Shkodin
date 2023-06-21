@@ -1,0 +1,93 @@
+﻿<Page x:Class="Shkodin.PageFolder.StaffFolder.ListOrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shkodin.PageFolder.StaffFolder"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="546" 
+      MaxHeight="546"
+      MinHeight="546"
+      d:DesignWidth="935"
+      MaxWidth="935"
+      MinWidth="935">
+
+    <Grid>
+        <TextBox x:Name="SearchTb"
+                 materialDesign:HintAssist.Hint="Поиск"
+                 TextChanged="SearchTb_TextChanged"
+                 BorderBrush="Black"
+                 BorderThickness="2" 
+                 Margin="214,10,214,500"
+                 FontSize="22"
+                 FontFamily="Cascadia Code"/>
+        <DataGrid x:Name="ListOrderDG" IsReadOnly="True"
+                 AutoGenerateColumns="False" 
+                  Foreground="Black"
+                  BorderBrush="Black" 
+                  Margin="0,56,0,0"
+                  FontSize="18"
+                  FontFamily="Cascadia Code"
+                  Background="{x:Null}">
+            <DataGrid.ContextMenu>
+                <ContextMenu Name="AdtCM">
+                    <MenuItem x:Name="Red"
+                        Header="Редактирование"
+                 Click="Red_Click"/>
+
+                    <Separator/>
+                    <MenuItem x:Name="Del"
+                        Header="Удалить"
+                 Click="Del_Click"/>
+
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№ п/п" 
+                                    Binding="{Binding IdOrder}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Размер комнаты" 
+                                    Binding="{Binding Size.NameSize}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Комната" 
+                                    Binding="{Binding Room.NameRoom}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Интерьер" 
+                                    Binding="{Binding Interior.NameInterior}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Тип комнаты" 
+                                    Binding="{Binding Type.NameType}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Пожелания" 
+                                    Binding="{Binding WishesOrder}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Фотограф" 
+                                    Binding="{Binding IdStaff.LastNameStaff}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Цветовая гамма" 
+                                    Binding="{Binding ColorSchemeOfTheHall.NameColorSchemeOfTheHall}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Оборудование" 
+                                    Binding="{Binding Equipment}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Оснащение" 
+                                    Binding="{Binding Equipping.NameEquipping}"
+                                    Width="Auto"/>
+
+                <DataGridTextColumn Header="Допполнения от заказчика" 
+                                    Binding="{Binding AddonFromBuyer}"
+                                    Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

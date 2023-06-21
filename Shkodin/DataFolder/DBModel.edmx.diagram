@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6cca970b90ee4e2f8db52e17a8c5e441" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.ColorSchemeOfTheHall" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Equipping" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Gender" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Interior" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Order" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Role" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Room" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Size" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Staff" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Type" Width="1.5" PointX="3" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.User" Width="1.5" PointX="8" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FK_Order_ColorSchemeOfTheHall" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Order_Equipping" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Staff_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Order_Interior" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Order_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Order_Size" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Order_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Order_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_User_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
